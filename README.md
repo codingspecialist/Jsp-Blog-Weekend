@@ -27,15 +27,4 @@ CREATE TABLE post(
     createDate timestamp,
     foreign key (userId) references user (id)
 ) engine=InnoDB default charset=utf8;
-
-CREATE TABLE comment(
-	id int primary key auto_increment,
-    userId int,
-    postId int,
-    content varchar(300) not null,
-    createDate timestamp,
-    foreign key (userId) references user (id) on delete set null,
-    foreign key (postId) references post (id) on delete cascade
-) engine=InnoDB default charset=utf8;
-
 ```
